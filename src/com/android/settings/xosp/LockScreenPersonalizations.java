@@ -30,6 +30,7 @@ import android.view.WindowManagerGlobal;
 import android.view.WindowManagerImpl;
 import android.widget.Toast;
 import com.android.internal.view.RotationPolicy;
+import com.android.internal.view.RotationPolicy.RotationPolicyListener;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
@@ -88,12 +89,16 @@ import java.util.ArrayList;
 import java.util.List;
 import com.android.settings.Utils;
 
+import com.android.internal.util.benzo.Helpers;
+
 public class LockScreenPersonalizations extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener{
 
     private static final String KEY_DTA_LOCK = "double_tap_sleep_anywhere";
+    private static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
 
     private SwitchPreference mDT2SAnywherePreference;
+    private SwitchPreference mLockScreenRotationPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +111,13 @@ public class LockScreenPersonalizations extends SettingsPreferenceFragment imple
         mDT2SAnywherePreference = (SwitchPreference) findPreference(KEY_DTA_LOCK);
         mDT2SAnywherePreference.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0) == 1));
+        mLockScreenRotationPref = (SwitchPreference) prefSet.findPreference(LOCKSCREEN_ROTATION);
+
+        boolean configEnableLockRotation = getResources().
+                        getBoolean(com.android.internal.R.bool.config_enableLockScreenRotation);
+        Boolean lockScreenRotationEnabled = Settings.System.getInt(getContentResolver(),
+                        Settings.System.LOCKSCREEN_ROTATION, configEnableLockRotation ? 1 : 0) != 0;
+        mLockScreenRotationPref.setChecked(lockScreenRotationEnabled);
     }
 
     @Override
@@ -118,12 +130,24 @@ public class LockScreenPersonalizations extends SettingsPreferenceFragment imple
         return false;
     }
 
+    private static void doSystemUIReboot() {
+        Helpers.restartSystemUI();
+    }
+
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
+        boolean enabled;
+
         if (preference == mDT2SAnywherePreference) {
-            boolean enabled = ((SwitchPreference)preference).isChecked();
+            enabled = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, enabled ? 1:0);
+            return true;
+        } else if(preference == mLockScreenRotationPref) {
+            enabled = mLockScreenRotationPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_ROTATION, enabled ? 1 : 0);
+            doSystemUIRebootU();
             return true;
         }
         return super.onPreferenceTreeClick(preference);
