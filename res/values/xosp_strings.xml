@@ -444,4 +444,8 @@
     <string name="timeout_1000">1 second</string>
     <string name="timeout_500">0,5 second</string>
 
+    <!-- Lockscreen torch -->
+    <string name="keyguard_torch_title">Lockscreen torch</string>
+    <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
+
 </resources>

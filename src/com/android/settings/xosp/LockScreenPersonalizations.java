@@ -59,6 +59,9 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraManager;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
@@ -83,6 +86,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.xosp.CustomSeekBarPreference;
+import com.android.settings.xosp.preferences.SystemSettingSwitchPreference;
 
 
 import java.util.ArrayList;
@@ -96,9 +100,11 @@ public class LockScreenPersonalizations extends SettingsPreferenceFragment imple
 
     private static final String KEY_DTA_LOCK = "double_tap_sleep_anywhere";
     private static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+    private static final String KEYGUARD_TORCH = "keyguard_toggle_torch";
 
     private SwitchPreference mDT2SAnywherePreference;
     private SwitchPreference mLockScreenRotationPref;
+    private SystemSettingSwitchPreference mLsTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -118,6 +124,11 @@ public class LockScreenPersonalizations extends SettingsPreferenceFragment imple
         Boolean lockScreenRotationEnabled = Settings.System.getInt(getContentResolver(),
                         Settings.System.LOCKSCREEN_ROTATION, configEnableLockRotation ? 1 : 0) != 0;
         mLockScreenRotationPref.setChecked(lockScreenRotationEnabled);
+
+        mLsTorch = (SystemSettingSwitchPreference) findPreference(KEYGUARD_TORCH);
+        if (!deviceSupportsFlashLight(getActivity())) {
+            prefSet.removePreference(mLsTorch);
+        }
     }
 
     @Override
@@ -155,5 +166,27 @@ public class LockScreenPersonalizations extends SettingsPreferenceFragment imple
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    }
+
+    public static boolean deviceSupportsFlashLight(Context context) {
+        CameraManager cameraManager = (CameraManager) context.getSystemService(
+                Context.CAMERA_SERVICE);
+        try {
+            String[] ids = cameraManager.getCameraIdList();
+            for (String id : ids) {
+                CameraCharacteristics c = cameraManager.getCameraCharacteristics(id);
+                Boolean flashAvailable = c.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+                Integer lensFacing = c.get(CameraCharacteristics.LENS_FACING);
+                if (flashAvailable != null
+                        && flashAvailable
+                        && lensFacing != null
+                        && lensFacing == CameraCharacteristics.LENS_FACING_BACK) {
+                    return true;
+                }
+            }
+        } catch (CameraAccessException e) {
+            // Ignore
+        }
+        return false;
     }
 }
