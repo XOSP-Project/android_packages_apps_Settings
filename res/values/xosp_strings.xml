@@ -104,10 +104,10 @@
 
     <!-- XOSP Misc category -->
     <string name="xosp_misc_screen_title">Screen</string>
-    
+
     <!-- XOSP External activities -->
     <string name="xosp_equalizer_activity">Equalizer</string>
-    
+
     <!-- About XOSP -->
     <string name="about_xosp">About XOSP</string>
     <string name="about_xosp_summary">Everything about us</string>
@@ -138,7 +138,7 @@
     <string name="xosp_statistics_site_summary">All the installations made by the users</string>
     <string name="xosp_about_intro_title">What is XOSP?</string>
     <string name="xosp_about_intro_summary">XOSP is an after-market firmware based on CodeAuroraSources (CAF) destinated for a wide range of Android phones.\n The name stands for the Xperia Open Source Project and the project was initially created by nilac for the Galaxy S+ (his old device) years ago when back then the ROM was called S+ Reborn.\n The vision was to create a minimal bloat free ROM which included Sony Xperia specific apps and various tweaks users would expect from a custom ROM.</string>
-    
+
     <!-- XOSP Equalizer Infos -->
     <string name="equalizer_question_one_title">Why no more ViPER?</string>
     <string name="equalizer_question_one_summary">I wanted something different this time for the ROM, even If I know ViPER is the best of all.</string>
@@ -149,7 +149,7 @@
     <string name="equalizer_question_four_title">Problems with the Custom profile?</string>
     <string name="equalizer_question_four_summary">Yeah I know, it is a visual issue in the app but I will try to fix it as soon as possible </string>
     <string name="equalizer_question_five_title">Who said all these?</string>
-    <string name="equalizer_question_five_summary">Me, the developer (nilac)</string>    
+    <string name="equalizer_question_five_summary">Me, the developer (nilac)</string>
 
     <!-- Proximity wake -->
     <string name="proximity_wake_title">Prevent accidental wake-up</string>
@@ -260,7 +260,7 @@
     <string name="blur_expstatus_cat">Expanded StatusBar </string>
     <string name="blur_notifications_cat">Notifications</string>
     <string name="blur_qs_cat">Quick Settings</string>
-    <string name="blur_recents_cat">Recent Apps</string> 
+    <string name="blur_recents_cat">Recent Apps</string>
     <string name="blur_colors_cat">Blur Color filters</string>
     <string name="blur_notices_cat">Notices</string>
 
@@ -368,7 +368,7 @@
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Screenshot Sound</string>
     <string name="screenshot_sound_summary">Enables/Disables Screenshot sound</string>
-    
+
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Ticker</string>
     <string name="ticker_title">Status Bar Ticker</string>
@@ -379,65 +379,6 @@
     <string name="icon_title">Icon</string>
     <string name="colors_title">Colors</string>
 
-    <!-- Lockscreen weather -->
-    <string name="weather_category">Lockscreen weather</string>
-    <string name="display_category_weather_title">Lockscreen weather options</string>
-    <string name="lock_screen_weather_settings_title">Weather</string>
-    <string name="weather_cat_notifications_title">Notifications</string>
-    <string name="weather_show_weather_title">Show weather</string>
-    <string name="weather_show_weather_summary">Enable to show weather information</string>
-    <string name="weather_show_location_title">Show location</string>
-    <string name="weather_show_location_summary">Enable to show the location</string>
-    <string name="weather_show_timestamp_title">Show timestamp</string>
-    <string name="weather_show_timestamp_summary">Enable to show the timestamp</string>
-    <string name="weather_condition_icon_title">Condition icon</string>
-    <string name="weather_condition_icon_dlg_title">Choose an icon for displaying the weather condition</string>
-    <string name="weather_condition_icon_monochrome_title">Monochrome</string>
-    <string name="weather_condition_icon_colored_title">Colored</string>
-    <string name="weather_condition_icon_vclouds_title">VClouds</string>
-    <string name="icons_title">Icons</string>
-    <string name="position_right_title">Right</string>
-    <string name="position_centered_title">Centered</string>
-    <string name="hidden_title">Hidden</string>
-    <string name="weather_hide_panel_title">Hide weather panel</string>
-    <string name="weather_hide_panel_dlg_title">Choose when the weather panel should be hidden</string>
-    <string name="weather_hide_panel_auto_title">Auto</string>
-    <string name="weather_hide_panel_custom_title">Custom</string>
-    <string name="weather_hide_panel_never_title">Never</string>
-    <string name="weather_hide_panel_auto_summary">The weather panel will be hidden when the visible notifications will reach the maximum allowed notifications on the lock screen</string>
-    <string name="weather_hide_panel_custom_summary">The weather panel will be hidden when the visible notifications will reach the chosen number of notifications</string>
-    <string name="weather_hide_panel_never_summary">The weather panel won\`t be hidden</string>
-    <string name="weather_number_of_notifications_title">Number of notifications</string>
-
-    <!-- Lockscreen weather -->
-    <string name="weather_category">Lockscreen weather</string>
-    <string name="display_category_weather_title">Lockscreen weather options</string>
-    <string name="lock_screen_weather_settings_title">Weather</string>
-    <string name="weather_cat_notifications_title">Notifications</string>
-    <string name="weather_show_weather_title">Show weather</string>
-    <string name="weather_show_weather_summary">Enable to show weather information</string>
-    <string name="weather_show_location_title">Show location</string>
-    <string name="weather_show_location_summary">Enable to show the location</string>
-    <string name="weather_show_timestamp_title">Show timestamp</string>
-    <string name="weather_show_timestamp_summary">Enable to show the timestamp</string>
-    <string name="weather_condition_icon_title">Condition icon</string>
-    <string name="weather_condition_icon_dlg_title">Choose an icon for displaying the weather condition</string>
-    <string name="weather_condition_icon_monochrome_title">Monochrome</string>
-    <string name="weather_condition_icon_colored_title">Colored</string>
-    <string name="weather_condition_icon_vclouds_title">VClouds</string>
-    <string name="icons_title">Icons</string>
-    <string name="position_right_title">Right</string>
-    <string name="position_centered_title">Centered</string>
-    <string name="hidden_title">Hidden</string>
-    <string name="weather_hide_panel_title">Hide weather panel</string>
-    <string name="weather_hide_panel_dlg_title">Choose when the weather panel should be hidden</string>
-    <string name="weather_hide_panel_auto_title">Auto</string>
-    <string name="weather_hide_panel_custom_title">Custom</string>
-    <string name="weather_hide_panel_never_title">Never</string>
-    <string name="weather_hide_panel_auto_summary">The weather panel will be hidden when the visible notifications will reach the maximum allowed notifications on the lock screen</string>
-    <string name="weather_hide_panel_custom_summary">The weather panel will be hidden when the visible notifications will reach the chosen number of notifications</string>
-    <string name="weather_hide_panel_never_summary">The weather panel won\`t be hidden</string>
-    <string name="weather_number_of_notifications_title">Number of notifications</string>
 
 
     <!-- Show carrier label and custom -->
@@ -451,7 +392,7 @@
     <string name="show_carrier_keyguard">Keyguard carrier</string>
     <string name="show_carrier_statusbar">Status bar carrier</string>
     <string name="show_carrier_enabled">Enabled</string>
-    
+
     <!-- Clock settings -->
     <string name="clock_settings_title">Clock settings</string>
     <string name="clock_settings_summary">Custom clock and date options</string>
@@ -479,7 +420,7 @@
     <string name="clock_date_style_lowercase">Lowercase</string>
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
-    
+
     <!-- ADB debugging notifications -->
     <string name="enable_adb_custom">Android debugging</string>
     <string name="enable_adb_summary_custom">Enable the Android Debug Bridge (adb) interface</string>
@@ -488,7 +429,7 @@
     <string name="adb_over_network">ADB over network</string>
     <string name="adb_over_network_summary">Enable TCP/IP debugging over network interfaces (Wi\u2011Fi, USB networks). This setting is reset on reboot</string>
     <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
-    
+
     <!-- Losckreen rotation -->
     <string name="lockscreen_rotation_title">Enable Lockscreen rotation</string>
 
