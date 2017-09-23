@@ -147,7 +147,7 @@ public class LockScreenPersonalizations extends SettingsPreferenceFragment imple
             enabled = mLockScreenRotationPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_ROTATION, enabled ? 1 : 0);
-            doSystemUIRebootU();
+            doSystemUIReboot();
             return true;
         }
         return super.onPreferenceTreeClick(preference);
