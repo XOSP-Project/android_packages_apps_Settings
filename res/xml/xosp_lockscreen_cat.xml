@@ -26,6 +26,7 @@
         <SwitchPreference
            android:key="lockscreen_rotation"
            android:title="@string/lockscreen_rotation_title"
+           android:summary="@string/lockscreen_rotation_summary"
            android:persistent="false" />
 
        <com.android.settings.xosp.preferences.SystemSettingSwitchPreference
